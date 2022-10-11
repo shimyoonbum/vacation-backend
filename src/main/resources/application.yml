@@ -1,0 +1,43 @@
+server:
+  port: 8070
+  servlet:
+    context-path: /
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+spring:
+  servlet:
+    multipart:
+      enabled: true
+      file-size-threshold: 1MB
+      location: C:/APPS/vacation-vue/frontend/public
+      max-file-size: 100MB
+      max-request-size: 100MB
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enabled: false
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/vacation?serverTimezone=Asia/Seoul
+    username: root
+    password: tree6548
+  jpa:
+    hibernate:
+      ddl-auto: update #create update none
+    show-sql: true
+
+jwt:
+  header: Authorization
+  secret: dmFjYXRpb24tc3ByaW5nLWJvb3Qtand0LXR1dG9yaWFsLXNlY3JldC10ZWNoLXNwcmluZy1ib290LWp3dC10dXRvcmlhbC1zZWNyZXQK
+  token-validity-in-seconds: 86400
+
+logging:
+  level:
+    com.metanet.vacation: DEBUG
