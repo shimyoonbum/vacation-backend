@@ -30,8 +30,13 @@ spring:
     password: tree6548
   jpa:
     hibernate:
-      ddl-auto: update #create update none
+      ddl-auto: none #create update none
     show-sql: true
+#  #초기 테이블 생성후 ddl-auto none로 변경 후에 데이터 자동 insert 되도록 주석 해제할 것
+#  sql:
+#    init:
+#      schema-locations: classpath:schema.sql
+#      mode: always
 
 jwt:
   header: Authorization
